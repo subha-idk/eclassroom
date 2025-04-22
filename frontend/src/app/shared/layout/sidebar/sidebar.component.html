@@ -1,0 +1,82 @@
+<div class="sidebar">
+  <div class="innerWrapper">
+    <ng-container *ngIf="userType === 'admin'; else elseCondition1">
+      <ul class="links">
+        <li
+          class="link"
+          routerLink="/admin"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Home
+        </li>
+        <li class="link" routerLink="/admin/teachers" routerLinkActive="active">Manage Teachers</li>
+        <li class="link" routerLink="/admin/students" routerLinkActive="active">Manage Students</li>
+        <li class="link" routerLink="/admin/sections" routerLinkActive="active">Manage Sections</li>
+        <li class="link" routerLink="/admin/subjects" routerLinkActive="active">Manage Subjects</li>
+      </ul>
+    </ng-container>
+    <ng-template #elseCondition1>
+      <ng-container *ngIf="userType === 'teacher'; else elseCondition2">
+        <ul class="links">
+          <li
+            class="link"
+            routerLink="/teacher"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Dashboard
+          </li>
+          <li
+            class="link"
+            routerLink="/teacher/take-attendence"
+            routerLinkActive="active"
+          >
+            Take Attendance
+          </li>
+          <li
+            class="link"
+            routerLink="/teacher/edit-attendence"
+            routerLinkActive="active"
+          >
+            Edit Attendance
+          </li>
+          <li
+            class="link"
+            routerLink="/teacher/notifications"
+            routerLinkActive="active"
+          >
+            Notification
+          </li>
+        </ul>
+      </ng-container>
+    </ng-template>
+
+    <ng-template #elseCondition2>
+      <ul class="links">
+        <li
+          class="link"
+          routerLink="student/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Dashboard
+        </li>
+        <li
+          class="link"
+          routerLink="student/attendance"
+          routerLinkActive="active"
+        >
+          Attendance
+        </li>
+        <li
+          class="link"
+          routerLink="student/notifications"
+          routerLinkActive="active"
+        >
+          Notifications
+        </li>
+      </ul>
+    </ng-template>
+  </div>
+</div>

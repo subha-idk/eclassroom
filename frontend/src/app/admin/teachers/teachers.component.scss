@@ -1,0 +1,25 @@
+table {
+    min-width: 600px;
+  }
+  
+  td,
+  th {
+    text-align: center;
+  }
+  
+  .viewItem {
+    cursor: pointer;
+  }
+  
+  .table-container {
+    max-height: 450px; /* Set the desired height */
+    overflow-y: auto; /* Add vertical scrollbar if necessary */
+  }
+
+  thead{
+    position: sticky;
+    top: 0;
+    background-color: aliceblue;
+    z-index: 9999;
+  }
+  

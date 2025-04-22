@@ -1,0 +1,45 @@
+<div class="search-container">
+  <mdb-form-control>
+    <input
+      mdbInput
+      [(ngModel)]="searchTerm"
+      type="text"
+      id="formControlLg"
+      class="form-control form-control-lg"
+    />
+    <label mdbLabel class="form-label" for="formControlLg"
+      >Search</label
+    >
+  </mdb-form-control>
+</div>
+
+<div class="table-container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Class Name</th>
+        <th scope="col">Section</th>
+        <th scope="col">Date</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let class of filterClassList(); let i = index">
+        <tr>
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ class.className }}</td>
+          <td>
+            <span class="badge badge-success rounded-pill d-inline">{{
+              class.section
+            }}</span>
+          </td>
+          <td>{{ formatDate(class.classDate) }}</td>
+          <td (click)="onShowAttendenceDetails(class._id, class.section)">
+            <mat-icon class="viewItem">chevron_right</mat-icon>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

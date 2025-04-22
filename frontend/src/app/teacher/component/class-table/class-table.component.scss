@@ -1,0 +1,32 @@
+table {
+  min-width: 600px;
+}
+
+td,
+th {
+  text-align: center;
+}
+
+.viewItem {
+  cursor: pointer;
+}
+
+.table-container {
+  max-height: 370px; /* Set the desired height */
+  overflow-y: auto; /* Add vertical scrollbar if necessary */
+}
+.search-container{
+  display: flex;
+  justify-content: end;
+  padding: 10px 30px 20px 0;
+}
+mdb-form-control{
+  max-width: 200px;
+}
+
+thead{
+  position: sticky;
+  top: 0;
+  background-color: aliceblue;
+  z-index: 9999;
+}

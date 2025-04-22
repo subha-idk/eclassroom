@@ -1,0 +1,54 @@
+.ui.form.segment {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 50px;
+  border: 1px solid #49cc2a;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-horizontal .form-group {
+  margin-bottom: 1rem;
+}
+
+.form-horizontal .form-group label {
+  display: flex;
+  width: 120px;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
+.form-horizontal .form-group input[type="text"],
+.form-horizontal .form-group input[type="email"],
+.form-horizontal .form-group input[type="password"] {
+  width: 180px;
+  padding: 0.7rem;
+  border: 1px solid #49cc2a;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.form-horizontal .form-group .invalid-feedback {
+  display: block;
+  color: red;
+  margin-top: 0.25rem;
+}
+
+.form-horizontal .form-group .ui.button.primary {
+  width: 160px;
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-horizontal .form-group .ui.button.primary:hover {
+  background-color: #0069d9;
+}
+
+.form-horizontal .form-group .ui.button.primary:disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+}

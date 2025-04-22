@@ -1,0 +1,33 @@
+<div class="container card">
+       
+        <div class="container">
+          <h2 class="text-center p-3">Notifications List</h2>
+          <div class="p-2">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Teacher</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Message</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let noti of notification; let i = index">
+                  <tr>
+                    <td scope="col">{{ i + 1 }}</td>
+                    <td>{{ noti.teacherId.name }}</td>
+                    <td>{{ noti.createdAt | date : "dd, MMM YY" }}</td>
+                    <td>
+                      {{ noti.message }}
+                    </td>
+                   
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      

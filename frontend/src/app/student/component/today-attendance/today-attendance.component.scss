@@ -1,0 +1,66 @@
+.class {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  //    align-items: center;
+  background-color: antiquewhite;
+  color: #fff;
+  
+}
+
+
+.Title{
+        font-size: 24px;
+}
+
+.title{
+   font-size: 18px;
+   font-weight: 500;
+}
+
+.summery{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+}
+.result{
+   font-size: 20px;
+   color: #ed5454;
+   font-weight: 600;
+}
+
+.details {
+  height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.status{
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-align: end;
+        width: 35%;
+}
+
+
+.className{
+        font-size: 18px;
+        font-weight: 500;
+        color: crimson;
+        width: 55%;
+}
+.index{
+        width: 10%;
+    font-weight: 700;
+    color: cadetblue;
+    font-size: 16px;
+}
+.present{
+        color: seagreen;
+
+
+}
+.absent{
+        color: #ed5454;
+}

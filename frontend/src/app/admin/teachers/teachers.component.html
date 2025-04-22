@@ -1,0 +1,42 @@
+<div><h2>Total Teachers : {{teachers.length}}</h2></div>
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Created At</th>
+        <th scope="col"><button
+          class="btn btn-warning"
+          mdbRipple
+          (click)="deleteAllTeacher()"
+          
+          
+        >
+          Delete All
+        </button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let teacher of teachers; let i = index">
+        <tr>
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ teacher.name }}</td>
+          <td>{{ teacher.email }}</td>
+          <td>{{ teacher.createdAt | date:'dd-MM-yyyy' }}</td>
+          <td>
+            <button
+              class="btn btn-danger"
+              mdbRipple
+              (click)="deleteTeacher(teacher._id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,28 @@
+::ng-deep {
+  .mat-horizontal-content-container,
+  .mat-vertical-content {
+    padding: 24px !important;
+    height: 100%;
+    display: grid !important;
+    place-content: normal !important;
+  }
+}
+.createClass {
+  padding: 10px;
+
+  .createClassInner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .firstNextButton {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.attendenceButtons {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+}

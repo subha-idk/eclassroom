@@ -1,0 +1,40 @@
+<div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Subject</h5>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="modalRef.close()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <form [formGroup]="subjectForm" (ngSubmit)="onSubmit()" class="section-form">
+            <div class="form-group">
+              <label for="name">Subject Name:</label>
+              <input type="text" formControlName="name" id="name" class="form-control" />
+              <div *ngIf="subjectForm.get('name')?.touched && subjectForm.get('name')?.errors?.['required']" class="error-message">
+                Name is required
+              </div>
+            </div>
+      
+          
+      
+          </form>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="!subjectForm.valid"
+          (click)="onSubmit()"
+        >
+          Add Section
+        </button>
+      </div>
+      

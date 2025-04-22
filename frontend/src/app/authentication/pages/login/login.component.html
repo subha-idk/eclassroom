@@ -1,0 +1,136 @@
+
+<section>
+  <div class="form-box">
+    <div class="form-value">
+      <h2>{{ isStudent ? "Student Login" : "Teacher Login" }}</h2>
+      <ng-container *ngIf="isStudent; else teacher">
+        <form [formGroup]="studentLoginForm" (ngSubmit)="submitForm()">
+          <div class="inputbox">
+            <input type="text" formControlName="rollNumber" />
+            <label for="">Roll Number</label>
+            <div
+              *ngIf="
+                studentLoginForm.get('rollNumber')?.invalid &&
+                studentLoginForm.get('rollNumber')?.touched
+              "
+              class="error-message"
+            >
+              <div
+                class="my-4"
+                *ngIf="studentLoginForm.get('rollNumber')?.hasError('required')"
+              >
+                Roll Number is required
+              </div>
+              <div
+                class="my-4"
+                *ngIf="
+                  studentLoginForm.get('rollNumber')?.hasError('minlength')
+                "
+              >
+                Roll Number must be at least 5 characters long
+              </div>
+              
+            </div>
+          </div>
+          <div class="inputbox">
+            <input type="password" formControlName="password" />
+            <label for="">Password</label>
+            <div
+              *ngIf="
+                studentLoginForm.get('password')?.invalid &&
+                studentLoginForm.get('password')?.touched
+              "
+              class="error-message"
+            >
+              <div
+                class="my-4"
+                *ngIf="studentLoginForm.get('password')?.hasError('required')"
+              >
+                Password is required
+              </div>
+            </div>
+          </div>
+          <button
+          type="submit"
+          [disabled]="studentLoginForm.invalid"
+        >
+          Log in
+        </button>
+        <div class="register">
+          <p>
+            Not the student?
+            <a (click)="changeLoginType()">
+              Teacher Login</a
+            >
+          </p>
+        </div>
+        </form>
+      </ng-container>
+
+      <ng-template #teacher>
+        <form [formGroup]="teacherLoginForm" (ngSubmit)="submitForm()">
+          <div class="inputbox">
+            <input type="email" formControlName="email" />
+            <label for="">Registered Email</label>
+            <div
+              *ngIf="
+                teacherLoginForm.get('email')?.invalid &&
+                teacherLoginForm.get('email')?.touched
+              "
+              class="error-message"
+            >
+              <div
+                class="my-4"
+                *ngIf="teacherLoginForm.get('email')?.hasError('required')"
+              >
+                Email is required
+              </div>
+              <div
+                class="my-4"
+                *ngIf="teacherLoginForm.get('email')?.hasError('email')"
+              >
+                Invalid email format
+              </div>
+            </div>
+          </div>
+          <div class="inputbox">
+            <input type="password" formControlName="password" />
+            <label for="">Password</label>
+            <div
+              *ngIf="
+                teacherLoginForm.get('password')?.invalid &&
+                teacherLoginForm.get('password')?.touched
+              "
+              class="error-message"
+            >
+              <div
+                class="my-4"
+                *ngIf="teacherLoginForm.get('password')?.hasError('required')"
+              >
+                Password is required
+              </div>
+            </div>
+          </div>
+          <button
+          type="submit"
+          [disabled]="teacherLoginForm.invalid"
+        >
+          Log in
+        </button>
+        <div class="register">
+          <p>
+            Not the teacher?
+            <a (click)="changeLoginType()">
+              Student Login</a
+            >
+          </p>
+        </div>
+        </form>
+      </ng-template>
+      <div class="container text-center"><a  (click)="adminLogin()">Admin Login</a></div>
+
+
+     
+    </div>
+  </div>
+</section>

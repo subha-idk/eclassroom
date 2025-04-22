@@ -1,0 +1,110 @@
+<div class="container">
+  <mat-stepper
+    class="example-stepper"
+    [orientation]="(stepperOrientation | async)!"
+    #stepper
+    [linear]="true"
+  >
+    <mat-step [stepControl]="firstFormGroup" label="Create a class">
+      <div class="container">
+        <form [formGroup]="firstFormGroup" class="createClass">
+          <div class="createClassInner">
+            <!-- <mat-form-field>
+              <mat-label>Class Name</mat-label>
+              <input
+                matInput
+                placeholder="DSA,DBMS"
+                formControlName="className"
+                required
+              />
+            </mat-form-field> -->
+            <mat-form-field>
+              <mat-label>Select Subject</mat-label>
+              <mat-select formControlName="className">
+                <ng-container *ngFor="let subject of subjects">
+                  <mat-option [value]="subject.value"
+                    >{{ subject.viewValue }}
+                  </mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Select Section</mat-label>
+              <mat-select formControlName="section">
+                <ng-container *ngFor="let section of sections">
+                  <mat-option [value]="section.value"
+                    >{{ section.viewValue }}
+                  </mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Choose a date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker"
+                formControlName="classDate"
+              />
+              <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error
+                *ngIf="firstFormGroup.get('classDate')?.hasError('futureDate')"
+              >
+                Date cannot be in the future
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="firstNextButton">
+            <button
+              matStepperNext
+              class="btn btn-info"
+              mdbRipple
+              [disabled]="!firstFormGroup.valid"
+              (click)="classeNextButtonClicked()"
+            >
+              Go to attendence Table
+            </button>
+          </div>
+        </form>
+      </div>
+    </mat-step>
+    <mat-step label="Mark attendence">
+      <app-attendence-table></app-attendence-table>
+
+      <div class="attendenceButtons">
+        <button
+          
+          class="btn btn-warning"
+          mdbRipple
+          
+          matStepperPrevious
+        >
+          Back
+        </button>
+        <button
+        class="btn btn-info"
+        mdbRipple
+          matStepperNext
+          (click)="attendenceNextButtonClicked()"
+        >
+          Next
+        </button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious (click)="stepper.reset()">
+          Back
+        </button>
+        <button mat-button (click)="onAttendenceSubmit()">Done</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

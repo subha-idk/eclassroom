@@ -1,0 +1,41 @@
+<div class="container card">
+  <div class="p-3 d-flex justify-content-end">
+    <button class="btn btn-info" (click)="openModal()">ADD Section</button>
+  </div>
+  <div class="container">
+    <h2>Section List</h2>
+    <div class="p-2">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Department</th>
+            <!-- <th scope="col">Date</th> -->
+            <th scope="col">Shift</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let section of sections; let i = index">
+            <tr>
+              <td scope="col">{{ i + 1 }}</td>
+              <td>{{ section.dept }}</td>
+              <!-- <td>{{ noti.createdAt | date : "dd, MMM YY" }}</td> -->
+              <td>
+                {{ section.shift }}
+              </td>
+              <td>
+                <button
+                  class="btn btn-danger"
+                  (click)="deleteSection(section._id)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

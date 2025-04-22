@@ -1,0 +1,37 @@
+::ng-deep {
+  .mat-horizontal-content-container,
+  .mat-vertical-content {
+    padding: 24px !important;
+    //     box-shadow: 2px -2px 56px 2px rgba(162,184,181,0.87);
+    //     width: 100%;
+    height: 100%;
+    display: grid !important;
+    place-content: normal !important;
+    
+  }
+
+  
+}
+
+
+.createClass {
+  padding: 10px;
+
+  .createClassInner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .firstNextButton {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.attendenceButtons {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+

@@ -1,0 +1,52 @@
+Teachers Endpoints:
+
+
+GET /api/teachers: Retrieve all teachers. --------
+GET /api/teachers/:id: Retrieve a specific teacher by ID. ----------
+POST /api/teachers: Create a new teacher. -----------
+PUT /api/teachers/:id: Update an existing teacher. --------------
+DELETE /api/teachers/:id: Delete a teacher. ----------------
+
+
+
+
+
+Students Endpoints:
+GET /api/students: Retrieve all students.  ----------
+
+GET /api/students/:id: Retrieve a specific student by ID. -------
+
+
+POST /api/students: Create a new student.   ---------
+
+PUT /api/students/:id: Update an existing student.  --------
+
+
+DELETE /api/students/:id: Delete a student.   -------
+
+
+
+
+
+Classes Endpoints:
+GET /api/class: Retrieve all classes.     -------
+
+GET /api/class/:id: Retrieve a specific class by ID. -------
+
+POST /api/class: Create a new class.  -------
+
+PUT /api/class/:id: Update an existing class.    -------
+
+DELETE /api/class/:id: Delete a class.  -------
+
+GET /api/class/teacher/:id: Retrieve a specific Teacher by their ID. -------
+
+GET /api/class/student/:id: Retrieve a specific Student by their ID. -------
+
+
+
+
+
+Attendance Endpoints:
+POST /api/attendance: Mark attendance for a class on a specific date.
+GET /api/attendance/:classId/:date: Retrieve attendance records for a class on a specific date.

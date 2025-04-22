@@ -1,0 +1,57 @@
+<div class="search-container d-flex justify-content-between">
+  <span><h2>Total Students : {{students.length}}</h2></span>
+  <mdb-form-control>
+    <input
+      mdbInput
+      [(ngModel)]="searchTerm"
+      type="text"
+      id="formControlLg"
+      class="form-control form-control-lg"
+    />
+    <label mdbLabel class="form-label" for="formControlLg">Search</label>
+  </mdb-form-control>
+</div>
+
+<div class="table-container">
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Roll</th>
+                    <th scope="col">Section</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col"><button
+                      class="btn btn-warning"
+                      mdbRipple
+                      (click)="deleteAllStudent()"
+                      
+                    >
+                      Delete All
+                    </button></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngFor="let student of filterStudentList(); let i = index">
+                    <tr>
+                      <th scope="row">{{ i + 1 }}</th>
+                      <td>{{ student.name }}</td>
+                      <td>{{ student.roll }}</td>
+                      <td>{{ student.section }}</td>
+                      <td>{{ student.createdAt  | date:'dd-MM-yyyy' }}</td>
+                      <td>
+                        <button
+                          class="btn btn-danger"
+                          mdbRipple
+                          (click)="deleteStudent(student._id)"
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+</div>
+
+

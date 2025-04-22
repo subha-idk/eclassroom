@@ -1,0 +1,37 @@
+<div class="container">
+  <mat-stepper
+    class="example-stepper"
+    [orientation]="(stepperOrientation | async)!"
+    [linear]="true"
+  >
+    <mat-step  label="Select a class">
+      <app-class-table (classTablePageDetails)="onShowDetails($event)"  ></app-class-table>
+    </mat-step>
+    <mat-step label="Mark attendence">
+      <app-attendence-table></app-attendence-table>
+
+      <div class="attendenceButtons">
+        <button mat-raised-button color="warn" matStepperPrevious>Back</button>
+        <button mat-button (click)="printAttendance()">Print Attendance</button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          matStepperNext
+          (click)="attendenceNextButtonClicked()"
+        >
+          Next
+        </button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="onAttendenceSubmit()">Done</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

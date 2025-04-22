@@ -1,0 +1,42 @@
+<div class="row dashboard">
+ 
+  
+        
+        <div class="c-dashboardInfo col-lg-6">
+          <div class="wrap">
+            
+            <ng-container *ngIf="userInfo else noPersonalRecord">
+              <h4
+              class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title"
+            >
+              {{userInfo.roll}}
+            </h4>
+              <span class="hind-font caption-12 c-dashboardInfo__count">{{
+                userInfo.name
+              }}</span>
+              <span class="badge badge-success rounded-pill d-inline">{{
+                userInfo.section
+              }}</span>
+              
+            </ng-container>
+            <ng-template #noPersonalRecord>
+              <span  class="hind-font caption-12 c-dashboardInfo__count">No Record Found</span>
+            </ng-template>
+      
+            
+          </div>
+        </div>
+        <div class="c-dashboardInfo col-lg-6">
+          <div class="wrap">
+            <h4
+              class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title"
+            ></h4>
+            <span class="hind-font caption-12 c-dashboardInfo__count"
+              ><button class="btn btn-danger" (click)="openModal()">
+                Edit Details
+              </button></span
+            >
+          </div>
+        </div>
+      </div>
+      

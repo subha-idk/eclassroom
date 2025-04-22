@@ -1,0 +1,179 @@
+<div class="ui form segment">
+  <h2 class="pb-2 text-center">
+    Register Student
+  </h2>
+  <form
+    class="form-horizontal"
+    role="form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="row">
+      <div class="col-12 col-lg-12 row">
+        <div class="col-6 col-lg-6 col-md-12">
+          <!-- Name -->
+          <div class="form-group">
+            <label for="inputName3" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-4">
+              <input
+                type="text"
+                class="form-control"
+                id="inputName3"
+                placeholder="Student's name"
+                formControlName="name"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="form.get('name')?.errors?.['required'] && form.get('name')?.touched"
+              >
+                Name is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-6 col-md-12">
+          <!-- Roll Number -->
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label"
+              >Roll Number</label
+            >
+            <div class="col-sm-4">
+              <input
+                type="text"
+                class="form-control"
+                id="inputRoll3"
+                placeholder="Student's roll no"
+                formControlName="roll"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="form.get('roll')?.errors?.['required'] && form.get('roll')?.touched"
+              >
+                Roll NO is required.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 row">
+        <!-- <div class="col-6 col-lg-6 col-md-12">
+          Date of Birth
+          <div class="form-group">
+            <label for="inputDob3" class="col-sm-2 control-label"
+              >Date of Birth</label
+            >
+            <div class="col-sm-4">
+              <input
+                type="date"
+                class="form-control"
+                id="inputDob3"
+                formControlName="dob"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="form.get('dob')?.errors?.['required'] && form.get('dob')?.touched"
+              >
+                Date of Birth is required.
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="col-6 col-lg-6 col-md-12">
+          <!-- Password -->
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label"
+              >Password</label
+            >
+            <div class="col-sm-4">
+              <input
+                type="password"
+                class="form-control"
+                id="inputPassword3"
+                placeholder="Enter password"
+                formControlName="password"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="form.get('password')?.errors?.['required'] && form.get('password')?.touched"
+              >
+                Password is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-6 col-md-12">
+          <!-- Section Selection -->
+          <div class="form-group">
+            <label for="inputSection3" class="col-sm-2 control-label"
+              >Section</label
+            >
+            <div class="col-sm-4">
+              <select
+                class="form-control"
+                id="inputSection3"
+                formControlName="section"
+              >
+                <option
+                  *ngFor="let section of sections"
+                  [value]="section.value"
+                >
+                  {{ section.viewValue }}
+                </option>
+              </select>
+              <div
+                class="invalid-feedback"
+                *ngIf="form.get('section')?.errors?.['required'] && form.get('section')?.touched"
+              >
+                Section selection is required.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-12 col-lg-12 row">
+        <div class="col-6 col-lg-6 col-md-12">
+          Section Selection
+          <div class="form-group">
+            <label for="inputSection3" class="col-sm-2 control-label"
+              >Section</label
+            >
+            <div class="col-sm-4">
+              <select
+                class="form-control"
+                id="inputSection3"
+                formControlName="section"
+              >
+                <option
+                  *ngFor="let section of sections"
+                  [value]="section.value"
+                >
+                  {{ section.viewValue }}
+                </option>
+              </select>
+              <div
+                class="invalid-feedback"
+                *ngIf="form.get('section')?.errors?.['required'] && form.get('section')?.touched"
+              >
+                Section selection is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-6"></div>
+      </div> -->
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-4">
+        <button
+          type="submit"
+          class="ui button primary"
+          [disabled]="form.invalid"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

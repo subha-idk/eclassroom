@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+@import "mdb-angular-ui-kit/assets/scss/mdb.scss";
+
+// regular style toast
+@import "ngx-toastr/toastr";
+
+/* Set scrollbar width */
+::-webkit-scrollbar {
+  width: 5px; /* for Chrome, Safari, and Opera */
+}
+
+/* Set scrollbar background color */
+::-webkit-scrollbar {
+  background-color: #f1f1f1; /* for Chrome, Safari, and Opera */
+}
+
+/* Set scrollbar thumb color */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* for Chrome, Safari, and Opera */
+}
+
+/* Set scrollbar track color */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* for Chrome, Safari, and Opera */
+}
+
+/* Set scrollbar corner color */
+::-webkit-scrollbar-corner {
+  background-color: #f1f1f1; /* for Chrome, Safari, and Opera */
+}
+
+

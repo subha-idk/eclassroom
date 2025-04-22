@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="py-2">
+    <div class="title d-flex justify-content-around align-items-center">
+      <h2>Search Attendance</h2>
+      <div class="d-flex justify-content-around">
+        <mat-form-field>
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input
+              matStartDate
+              placeholder="Start date"
+              [(ngModel)]="startDate"
+            />
+            <input matEndDate placeholder="End date" [(ngModel)]="endDate" />
+          </mat-date-range-input>
+
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+         
+        </mat-form-field>
+        <span class="p-3">
+          <button class="btn btn-info" mdbRipple (click)="submit()">Search</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="details mx-3 my-1">
+
+    <!-- table start -->
+ 
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Subject Name</th>
+          <th scope="col">Class Date</th>
+          <th scope="col">Total Classes</th>
+          <th scope="col">Present Classes</th>
+          <th scope="col">Absent Classes</th>
+        </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let attendance of AttendanceListKeys; let i = index">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ attendance }}</td>
+    <td>{{ newAttendanceList[attendance].classDate |  date: 'dd MMM YYYY'}}</td>
+    <td>{{ newAttendanceList[attendance].totalClasses }}</td>
+    <td>{{ newAttendanceList[attendance].presentClasses }}</td>
+    <td>{{ newAttendanceList[attendance].absentClasses }}</td>
+  </tr>
+        
+      </tbody>
+    </table>
+
+    <!-- table end -->
+  </div>
+
+  <div class="summery py-3">
+    <div class="container">
+      <span class="title"> Total Classes : </span>
+      <span class="result">
+        {{ totalClasses }}
+      </span>
+    </div>
+    <div class="container">
+      <span class="title"> Present : </span>
+      <span class="result">
+        {{ present }}
+      </span>
+    </div>
+  </div>
+</div>

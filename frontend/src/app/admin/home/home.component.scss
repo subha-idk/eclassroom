@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+app-register-teacher {
+  flex: 1;
+}
+app-register-student {
+  flex: 1;
+}
